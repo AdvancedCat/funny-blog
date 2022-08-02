@@ -5,7 +5,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 ### 路由改写
 Q: `pages/api` 会自动映射到路由 `/api/*`，那如果API有多个版本怎么办？比如 `/api/v2/...`                          
 A:  在 `next.config.js` 中配置 rewrites 配置项
-
+方案一：
 ```js
 module.exports = {
   async rewrites() {
@@ -19,6 +19,9 @@ module.exports = {
 }
 ```
 当访问 `/api/v2/user?id=1` 时，会改写请求为 `api/user?id=1&version=v2`
+
+方案二：
+使用 `middleware.js` 中间件去修改请求
 
 ### 动态引入
 
