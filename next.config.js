@@ -7,10 +7,10 @@
 module.exports = {
     async rewrites() {
         return [
-            {
-                source: '/api/:version/:rest*',
-                destination: '/api/:rest*?version=:version',
-            },
+            // {
+            //     source: '/api/:version/:rest*',
+            //     destination: '/api/:rest*?version=:version',
+            // },
         ];
     },
     // add custom headers for all routes 

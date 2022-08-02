@@ -1,7 +1,7 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-## Q&A
-
+# Q&A
+## page
 ### Layouts
 
 在 `_app.js` 中可以为每个 page 添加统一的layout
@@ -92,3 +92,12 @@ ENV 加载顺序：
 3. `.env.local` (Not checked when NODE_ENV is test.)
 4. `.env.$(NODE_ENV)`
 5. `.env`
+
+
+## api routes
+
+### 动态 api 路由
+
+- `pages/api/post/create.js` - Will match `/api/post/create`
+- `pages/api/post/[pid].js` - Will match `/api/post/1`, `/api/post/abc`, etc. But not `/api/post/create`
+- `pages/api/post/[...slug].js` - Will match `/api/post/1/2`, `/api/post/a/b/c`, etc. But not `/api/post/create`, `/api/post/abc`
