@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:local": "node server.js",
+    "dev:local": "node server/index.js",
     "build": "next build",
     "start": "next start"
   },

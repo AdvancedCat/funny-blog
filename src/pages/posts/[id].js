@@ -3,7 +3,7 @@ import Layout from '../../components/layout';
 import Date from '../../components/date';
 import { CommentList } from '../../dynamic-components'
 import utilStyles from '../../styles/utils.module.css';
-import { getAllPostsIds, getPostData } from '../../lib/posts';
+import { getAllPostsIds, getPostData } from '../../../lib/posts';
 
 
 export async function getStaticPaths() {
