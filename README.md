@@ -51,3 +51,10 @@ const DynamicComponent = dynamic(() =>
 
 ### 三、鉴权
 
+
+### 四、自定义server
+如果需要部署到其他服务器上，需要精细化控制server。详见 `server.js` 文件。
+
+#### 其他方案： 
+- [with Koa](https://github.com/vercel/next.js/blob/canary/examples/custom-server-koa/server.js)
+- [with Express](https://github.com/vercel/next.js/blob/canary/examples/custom-server-express/server.js)
