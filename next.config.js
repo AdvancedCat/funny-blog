@@ -5,6 +5,8 @@
  **/
 
 module.exports = {
+    // 可在代码中直接读取 process.env.xxxx
+    env: {},
     async rewrites() {
         return [
             // {
