@@ -6,6 +6,7 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../../lib/posts';
 
 export async function getStaticProps() {
+    console.log('环境变量:', process.env.DB_HOST)
     const allPostsData = getSortedPostsData();
     return {
         props: {
@@ -21,7 +22,7 @@ export default function Home({ allPostsData }) {
                 <title>{siteTitle}</title>
             </Head>
             <section className={utilStyles.headingMd}>
-                <p>[Your Self Introduction]</p>
+                <p>{process.env.NEXT_PUBLIC_INTRODUCTION}</p>
                 <p>
                     (This is a sample website - you’ll be building a site like
                     this on{' '}

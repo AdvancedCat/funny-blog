@@ -66,3 +66,16 @@ const DynamicComponent = dynamic(() =>
 
 默认支持常见的 `src` 代码组织形式
 > 如果在根项目中有 `pages` 文件夹，则会覆盖 `src/pages`
+
+### env 环境变量
+
+Next 默认会从 `.env` 中读取环境变量，以 `NEXT_PUBLIC_` 开头的变量可以在C端使用。
+
+> `NEXT_PUBLIC_` 开头的环境变量会通过 webpack definePlugin 插件写入
+
+ENV 加载顺序：
+1. `process.env`
+2. `.env.$(NODE_ENV).local`
+3. `.env.local` (Not checked when NODE_ENV is test.)
+4. `.env.$(NODE_ENV)`
+5. `.env`
