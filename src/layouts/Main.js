@@ -12,7 +12,7 @@ export default function MainLayout({ children, home }) {
         <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maxmium-scale=1.0, object-fit=cover"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
                 <meta
                     name="description"
                     content="Learn how to build a personal website using Next.js"
