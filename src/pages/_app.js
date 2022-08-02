@@ -5,5 +5,7 @@ export function reportWebVitals(metric) {
 }
 
 export default function App({ Component, pageProps }) {
-    return <Component {...pageProps}></Component>;
+    // use the layout defined at the page level, if available
+    const getLayout = Component.getLayout || ((page) => page);
+    return getLayout(<Component {...pageProps}></Component>);
 }

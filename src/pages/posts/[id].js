@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Layout from '../../components/layout';
+import MainLayout from '../../layouts/Main';
+import PostLayout from '../../layouts/PostLayout';
 import Date from '../../components/date';
 import { CommentList } from '../../dynamic-components'
 import utilStyles from '../../styles/utils.module.css';
@@ -26,7 +27,7 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ postData }) {
     return (
-        <Layout>
+        <>
             <Head>
                 <title>{postData.title}</title>
             </Head>
@@ -40,6 +41,15 @@ export default function Post({ postData }) {
                 />
             </article>
             <CommentList postId={postData.id}></CommentList>
-        </Layout>
+        </>
     );
+}
+
+
+Post.getLayout = function getLayout(page){
+    return(
+        <MainLayout>
+            <PostLayout>{page}</PostLayout>
+        </MainLayout>    
+    )
 }

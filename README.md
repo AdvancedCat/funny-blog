@@ -2,6 +2,19 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 ## Q&A
 
+### Layouts
+
+在 `_app.js` 中可以为每个 page 添加统一的layout
+
+```js
+export default function MyApp({ Component, pageProps }) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page)
+
+  return getLayout(<Component {...pageProps} />)
+}
+```
+
 ### 路由改写
 Q: `pages/api` 会自动映射到路由 `/api/*`，那如果API有多个版本怎么办？比如 `/api/v2/...`                          
 A:  在 `next.config.js` 中配置 rewrites 配置项
