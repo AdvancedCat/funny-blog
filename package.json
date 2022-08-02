@@ -4,6 +4,7 @@
     "dev": "next dev",
     "dev:local": "node server/index.js",
     "build": "next build",
+    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
@@ -14,5 +15,9 @@
     "react-dom": "^18",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1"
+  },
+  "devDependencies": {
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3"
   }
 }
