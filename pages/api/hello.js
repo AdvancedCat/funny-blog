@@ -1,3 +1,5 @@
 export default function handler(req, res) {
-    res.status(200).json({ text: 'Hello' });
+    const query = req.query
+    console.log('query:', query)
+    res.status(200).json({ text: 'Hello ' + JSON.stringify(query) });
 }

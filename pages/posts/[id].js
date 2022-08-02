@@ -1,8 +1,10 @@
-import Head from 'next/head';
+import Head from 'next/head'
 import Layout from '../../components/layout';
 import Date from '../../components/date';
+import { CommentList } from '../../dynamic-components'
 import utilStyles from '../../styles/utils.module.css';
 import { getAllPostsIds, getPostData } from '../../lib/posts';
+
 
 export async function getStaticPaths() {
     const paths = getAllPostsIds();
@@ -37,6 +39,7 @@ export default function Post({ postData }) {
                     dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
                 />
             </article>
+            <CommentList postId={postData.id}></CommentList>
         </Layout>
     );
 }
