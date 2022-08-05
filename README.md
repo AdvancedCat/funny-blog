@@ -67,6 +67,16 @@ const DynamicComponent = dynamic(() =>
 
 ### 鉴权
 
+接口需要授权访问，在api的req中读取登录态信息，
+
+```js
+const cookies = req.cookies
+if(!cookies.get('session')){
+    res.end(`Non-login, can't create post`)
+    return
+}
+```
+
 
 ### 自定义server
 如果需要部署到其他服务器上，需要精细化控制server。详见 `server.js` 文件。

@@ -12,10 +12,17 @@ export function middleware(req){
         return response
     }
 
+    if(url.indexOf('/post/create') > -1){
+        const cookies = req.cookies
+        if(!cookies.get('session')){
+            return NextResponse.redirect(new URL(`/login?redirectUrl=${req.url}`, req.url))
+        }
+    }
+
     // return NextResponse.redirect(new URL('/about-2', req.url))
 }
 
 // 满足要求的路由才运行中间件, matcher内元素为静态字符串类型
 export const config = {
-    matcher: ['/about/:path*', '/posts/:id']
+    matcher: ['/about/:path*', '/posts/:id', '/post/create']
 }

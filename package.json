@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.12",
+    "cookie": "^0.5.0",
     "cors": "^2.8.5",
     "date-fns": "^2.29.1",
     "gray-matter": "^4.0.3",
